@@ -108,7 +108,7 @@ uv 能干什么：
 
 ### 怎么使用
 
-- 1.**创建项目目录**，如：a_python_base
+- 1.**创建项目目录**，如：python_base
 - 2.**创建虚拟环境**，使用 Python 自带的 venv 模块，习惯把环境文件夹命名为 .venv
     ```bash
     python -m venv .venv
@@ -190,7 +190,7 @@ uv 能干什么：
 ### 创建 Python 项目
 使用 vs code 创建 python 项目示例。
 
-- **新建文件夹**：a_python_base ，用 vs code 打开 a_python_base
+- **新建文件夹**：python_base ，用 vs code 打开 python_base
 - **配置解释器**：按 Ctrl+Shift+P 搜索 Python: Select Interpreter，选择虚拟环境（.venv）下的 Python 解释器。
 - **工作区设置**：VS Code 会在项目根目录生成 .vscode/ 文件夹，记录你的格式化工具、代码检查器等配置。
 
@@ -205,7 +205,7 @@ uv 能干什么：
 ### 项目结构示例
 
 ```text
-a_python_base/                  # 项目根目录
+python_base/                  # 项目根目录
     ├── .venv/                  # 虚拟环境（禁止提交到 Git）
     ├── .env                    # 环境变量配置
     ├── .gitignore              # 忽略文件配置
@@ -230,6 +230,43 @@ a_python_base/                  # 项目根目录
     - **代码分离**：不要把所有代码都写在 main.py。随着项目增大，应利用 APIRouter 等工具将逻辑拆分到不同模块。
     - **配置分离**：使用 pydantic-settings 库将环境变量自动加载到 Python 对象中，实现“配置即代码”。
     - **测试先行**：在 tests/ 下为每个功能模块编写测试脚本，通过在终端输入 pytest 一键运行所有测试。
+
+
+## 5 解释器
+> Python 解释器是读取并执行 Python 代码的核心程序。
+
+Python 作为一门解释型语言，其程序的执行依赖于解释器对代码的逐行解析与运行，主要特效有：
+- 优雅的语法和动态类型，使得 Python 成为在多数平台上编写脚本和快速开发应用的理想语言。
+- 解释器易于扩展，开发者可以使用 C 或 C++ 为其增加新的功能或数据类型。
+
+### 如何使用解释器
+先配置好 Python 的环境变量。
+
+- **交互模式**：
+    - 在终端输入 python 或 python3 即可进入交互环境（出现 >>> 提示符）。
+    - 输入任何 Python 表达式并立即看到结果，常用于测试代码片段
+
+- **脚本模式**：
+    - 将代码保存在 .py 文件中，例如 Hello.py
+    - 使用命令 python Hello.py 调用解释器来运行整个脚本文件       
+
+- **查看版本**：使用 python -V 或 python --version 命令查看解释器版本。
+
+
+### 解释器的定位与路径（Shebang 行）
+在编写 Python 脚本时，经常在第一行看到类似 #!/usr/bin/python3 的代码，这被称为 Shebang：
+
+- **作用**：告诉操作系统在直接运行该脚本（如 ./script.py）时，应该调用哪个路径下的解释器程序。
+- 推荐使用 ``#!/usr/bin/env python3``。这种写法会从系统的环境变量中查找 Python3 的安装路径，比写死固定路径（如 /usr/bin/python3）具有更好的跨平台兼容性。
+- 系统差异：
+    - **Linux/Unix**：Shebang 行起关键作用，决定了脚本的执行环境。
+    - **Windows**：Windows 主要根据文件后缀名（.py）来关联解释器，但现代 Python 安装程序提供的 py.exe 启动器也可以识别 Shebang 行来选择特定版本的解释器。
+
+### 解释器与工程环境
+
+- **环境隔离**：在 虚拟环境 (venv) 中，系统会为每个项目创建 Python 解释器的私有副本。
+- **VS Code 集成**：在 VS Code 中，你可以通过 Select Interpreter 命令手动指定项目使用的解释器路径（全局路径或虚拟环境路径），确保编辑器能正确进行代码补全和错误检查。
+
 
 
 

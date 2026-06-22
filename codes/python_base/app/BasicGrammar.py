@@ -177,29 +177,270 @@ print(tinydict.values())    # 输出所有值
 # help(calculate)
 
 
-class Person:
-    """人物类，用于表示一个人的基本信息"""
+# class Person:
+#     """人物类，用于表示一个人的基本信息"""
 
-    def __init__(self, name, age):
-        """
-        初始化人物对象
+#     def __init__(self, name, age):
+#         """
+#         初始化人物对象
 
-        参数:
-            name: 姓名
-            age: 年龄
-        """
-        self.name = name
-        self.age = age
+#         参数:
+#             name: 姓名
+#             age: 年龄
+#         """
+#         self.name = name
+#         self.age = age
 
-    def introduce(self):
-        """介绍这个人"""
-        return f"我叫{self.name}，今年{self.age}岁"
+#     def introduce(self):
+#         """介绍这个人"""
+#         return f"我叫{self.name}，今年{self.age}岁"
 
-# 访问类的文档
-print(Person.__doc__)
+# # 访问类的文档
+# print(Person.__doc__)
 
-# 访问方法的文档
-print(Person.introduce.__doc__)
+# # 访问方法的文档
+# print(Person.introduce.__doc__)
+
+################## in / not in  ######################
+
+# a = 10
+# b = 20
+# list = [1, 2, 3, 4, 5 ]
+ 
+# if ( a in list ):
+#    print ("1 - 变量 a 在给定的列表中 list 中")
+# else:
+#    print ("1 - 变量 a 不在给定的列表中 list 中")
+ 
+# if ( b not in list ):
+#    print ("2 - 变量 b 不在给定的列表中 list 中")
+# else:
+#    print ("2 - 变量 b 在给定的列表中 list 中")
+ 
+# # 修改变量 a 的值
+# a = 2
+# if ( a in list ):
+#    print ("3 - 变量 a 在给定的列表中 list 中")
+# else:
+#    print ("3 - 变量 a 不在给定的列表中 list 中")
+
+################## 运算符优先级  ######################
+
+# a = 20
+# b = 10
+# c = 15
+# d = 5
+# e = 0
+ 
+# e = (a + b) * c / d       #( 30 * 15 ) / 5
+# print ("(a + b) * c / d 运算结果为：",  e)
+ 
+# e = ((a + b) * c) / d     # (30 * 15 ) / 5
+# print ("((a + b) * c) / d 运算结果为：",  e)
+ 
+# e = (a + b) * (c / d)    # (30) * (15/5)
+# print ("(a + b) * (c / d) 运算结果为：",  e)
+ 
+# e = a + (b * c) / d      #  20 + (150/5)
+# print ("a + (b * c) / d 运算结果为：",  e)
+
+################## if 语句  ######################
+# age = int(input("请输入你家狗狗的年龄: "))
+# print("")
+# if age <= 0:
+#     print("你是在逗我吧!")
+# elif age == 1:
+#     print("相当于 14 岁的人。")
+# elif age == 2:
+#     print("相当于 22 岁的人。")
+# elif age > 2:
+#     human = 22 + (age -2)*5
+#     print("对应人类年龄: ", human)
+ 
+# ### 退出提示
+# input("点击 enter 键退出")
+
+
+
+# 该实例演示了数字猜谜游戏
+# number = 7
+# guess = -1
+# print("数字猜谜游戏!")
+# while guess != number:
+#     guess = int(input("请输入你猜的数字："))
+ 
+#     if guess == number:
+#         print("恭喜，你猜对了！")
+#     elif guess < number:
+#         print("猜的数字小了...")
+#     elif guess > number:
+#         print("猜的数字大了...")
+
+################## match case 语句  ######################
+# def check_permission(status):
+#     match status:
+#         case 200:
+#             return "OK - 请求成功"
+#         case 301 | 302:
+#             return "Redirect - 重定向"
+#         case 401 | 403 | 404:
+#             return "Not allowed - 无权限或未找到"
+#         case 500 | 502 | 503:
+#             return "Server Error - 服务器错误"
+#         case _:
+#             return "Unknown status - 未知状态码"
+ 
+# for code in [200, 301, 403, 500, 418]:
+#     print(f"状态码 {code}: {check_permission(code)}")
+################## match case 语句  ######################
+
+# n = 100
+# sum = 0
+# counter = 1
+# while counter <= n:
+#     sum = sum + counter
+#     counter += 1
+# print("1 到 %d 之和为: %d" % (n,sum))
+
+
+# count = 0
+# while count < 5:
+#    print (count, " 小于 5")
+#    count = count + 1
+# else:
+#    print (count, " 大于或等于 5")
+
+
+# sites = ["Baidu", "Google","Runoob","Taobao"]
+# for site in sites:
+#     print(site)
+
+# n = 5
+# while n > 0:
+#     n -= 1
+#     if n == 2:
+#         break
+#     print(n)
+# print('循环结束。')
+
+################## 函数  ######################
+
+# def change(a):
+#     print(id(a))   # 指向的是同一个对象
+#     a=10
+#     print(id(a))   # 一个新对象
+ 
+# a=1
+# print(id(a))
+# change(a)
+
+
+# 可写函数说明
+# def changeme( mylist ):
+#    "修改传入的列表"
+#    mylist.append([1,2,3,4])
+#    print ("函数内取值: ", mylist)
+#    return
+ 
+# # 调用changeme函数
+# mylist = [10,20,30]
+# changeme( mylist )
+# print ("函数外取值: ", mylist)
+
+
+# #可写函数说明
+# def printme( str ):
+#    "打印任何传入的字符串"
+#    print (str)
+#    return
+ 
+# # 调用 printme 函数，不加参数会报错
+# printme()
+
+
+# #可写函数说明
+# def printinfo( name, age ):
+#    "打印任何传入的字符串"
+#    print ("名字: ", name)
+#    print ("年龄: ", age)
+#    return
+ 
+# #调用printinfo函数
+# printinfo( age=50, name="runoob" )
+
+
+# #可写函数说明
+# def printinfo( name, age = 35 ):
+#    "打印任何传入的字符串"
+#    print ("名字: ", name)
+#    print ("年龄: ", age)
+#    return
+ 
+# #调用printinfo函数
+# printinfo( age=50, name="runoob" )
+# print ("------------------------")
+# printinfo( name="runoob" )
+
+
+# # 可写函数说明
+# def printinfo( arg1, *vartuple ):
+#    "打印任何传入的参数"
+#    print ("输出: ")
+#    print (arg1)
+#    print (vartuple)
+ 
+# # 调用printinfo 函数
+# printinfo( 70, 60, 50 )
+
+
+# # 可写函数说明
+# def printinfo( arg1, **vardict ):
+#    "打印任何传入的参数"
+#    print ("输出: ")
+#    print (arg1)
+#    print (vardict)
+ 
+# # 调用printinfo 函数
+# printinfo(1, a=2,b=3)
+
+
+# x = lambda a : a + 10
+# print(x(5))
+
+
+# 可写函数说明
+sum = lambda arg1, arg2: arg1 + arg2
+ 
+# 调用sum函数
+print ("相加后的值为 : ", sum( 10, 20 ))
+print ("相加后的值为 : ", sum( 20, 20 ))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
