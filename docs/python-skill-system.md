@@ -24,16 +24,16 @@
       tuple元组
       set集合
       字符串处理
-    4.文件与数据处理
-      文件读写
-      JSON处理
-      CSV处理
-      pathlib路径处理
-    5.面向对象与类型
+    4.面向对象与类型
       class类
       dataclass
       类型注解
       pydantic模型
+    5.文件与数据处理
+      文件读写
+      JSON处理
+      CSV处理
+      pathlib路径处理
     6.Web API开发
       HTTP基础
       requests或httpx
