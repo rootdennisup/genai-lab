@@ -17,6 +17,7 @@ def update_item(item_id: int, item: Item):
     return {"item_name": item.name, "item_id": item_id}
 
 # 运行：
-# 1. 保存为 main.py
-# 2. 运行命令：fastapi dev main.py [6]
-# 3. 访问 http://127.0.0.1:8000/docs 查看自动生成的交互式文档 [2, 6]
+# 1.运行命令：fastapi dev app/fastapi_json.py 
+# 2.访问 http://127.0.0.1:8000/docs 查看自动生成的交互式文档  
+# 3.ctrl + C 退出
+
