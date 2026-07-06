@@ -1,4 +1,6 @@
-# Web API 开发
+# 模块五：并发与 Web 服务 (Web & Service)--Web API 开发
+本模块解决大模型应用的服务化，使之成为可调用的后端接口或集成工具。
+
 
 ## 1 HTTP 基础
 
@@ -38,7 +40,7 @@ HTTP 遵循典型的**请求-响应（Request-Response）模型**：
 ### 1.4 HTTP 四要素
 HTTP 四要素为：路径 (Path)、方法 (Method)、参数 (Parameters)、状态码 (Status Codes)。
 
-[http_demo](../codes/python_base/app/http_demo.py)
+[http_demo](../codes/python_base/app/ws/http_demo.py)
 
 **1> 请求路径**：
 
