@@ -29,7 +29,7 @@ Pydantic 通过以下组件构建起完整的数据处理体系：
   - 专门用于配置管理，它可以自动从**环境变量**中读取配置并填充到 Python 对象中，非常适合管理数据库密码或 API 密钥。
   - 它会自动按照优先级从“系统环境变量 -> .env 文件 -> 默认值”读取配置，并进行类型检查，确保你的数据库连接字符串或密码格式正确。
 
-demo 示例：[pydantic_inventory_demo](../codes/python_base/ds/pydantic_inventory_demo.py)
+demo 示例：[pydantic_inventory_demo](../codes/python_base/app/ds/pydantic_inventory_demo.py)
 
 
 ## 3 主要功能与工程价值

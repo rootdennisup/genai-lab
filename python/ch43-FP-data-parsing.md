@@ -42,9 +42,9 @@
 ### 1.4 工程实践 & 总结
 
 - **工程实践**：
-    - **简单任务**：如果只是读写一个简单的本地 .json 配置文件，使用内置的 json 模块即可。[simple_json](../codes/python_base/fp/simple_json.py)   
-    - **数据模型**：在编写需要确保数据准确性的逻辑时，务必使用 Pydantic BaseModel。[pydantic_json](../codes/python_base/ds/pydantic_json.py)
-    - **API 接口**：在开发 Web 服务时，利用 FastAPI 的自动序列化特性，只需声明一次类型，即可获得数据验证、转换和自动生成的交互式文档（Swagger UI）。[fastapi_json](../codes/python_base/fp/fastapi_json.py)
+    - **简单任务**：如果只是读写一个简单的本地 .json 配置文件，使用内置的 json 模块即可。[simple_json](../codes/python_base/app/fp/simple_json.py)   
+    - **数据模型**：在编写需要确保数据准确性的逻辑时，务必使用 Pydantic BaseModel。[pydantic_json](../codes/python_base/app/ds/pydantic_json.py)
+    - **API 接口**：在开发 Web 服务时，利用 FastAPI 的自动序列化特性，只需声明一次类型，即可获得数据验证、转换和自动生成的交互式文档（Swagger UI）。[fastapi_json](../codes/python_base/app/fp/fastapi_json.py)
    
 
 - **总结**：
@@ -70,8 +70,8 @@ CSV 的操作建立在文件读写的基础之上，基本流程如下：
 - **自动关闭**：配合 with 语句确保资源释放。
 
 demo 示例：
-- [csv_base](../codes/python_base/fp/csv_base.py)
-- [csv_dict](../codes/python_base/fp/csv_dict.py)
+- [csv_base](../codes/python_base/app/fp/csv_base.py)
+- [csv_dict](../codes/python_base/app/fp/csv_dict.py)
 
 ### 2.2 关键点说明
 
@@ -112,7 +112,7 @@ demo 示例：
 - ``Markdown-it-py``：功能极其强大且完全兼容 CommonMark 规范的解析库，常用于生成复杂的文档系统。
 
 
-[markdown_to_api](../codes/python_base/fp/markdown_to_api.py)
+[markdown_to_api](../codes/python_base/app/fp/markdown_to_api.py)
 
 
 

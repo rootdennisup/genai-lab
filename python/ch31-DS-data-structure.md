@@ -121,5 +121,5 @@ print(f"所有项目 ID: {project_ids}")
   
 这些特性的结合使 Python 在 Web API 开发和数据分析领域具备了极高的生产力。
 
-[core_containers_demo](../codes/python_base/app/ds/core_containers_demo.py)
+[core_containers_demo](../codes/python_base/app/app/ds/core_containers_demo.py)
 
