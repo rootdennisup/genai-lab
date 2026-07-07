@@ -1,5 +1,19 @@
 # 模块四：IO 与文件处理 (File Processing)--文件与数据处理
 
+- [模块四：IO 与文件处理 (File Processing)--文件与数据处理](#模块四io-与文件处理-file-processing--文件与数据处理)
+  - [1 JSON 数据解析](#1-json-数据解析)
+    - [1.1 Python 标准库：json 模块](#11-python-标准库json-模块)
+  - [1.2 工程化方案：Pydantic](#12-工程化方案pydantic)
+  - [1.3 Web 开发中的自动化：FastAPI](#13-web-开发中的自动化fastapi)
+    - [1.4 工程实践 \& 总结](#14-工程实践--总结)
+  - [2 CSV处理](#2-csv处理)
+    - [2.1 操作流程](#21-操作流程)
+    - [2.2 关键点说明](#22-关键点说明)
+    - [2.3 适用场景与局限性](#23-适用场景与局限性)
+    - [2.4 替代方案](#24-替代方案)
+  - [3 Markdown 格式解析库](#3-markdown-格式解析库)
+    - [3.1 解析 Markdown 的通用流程（基于标准库）](#31-解析-markdown-的通用流程基于标准库)
+    - [3.2 常见的 Markdown 解析库](#32-常见的-markdown-解析库)
 
 ## 1 JSON 数据解析
 - JSON (JavaScript Object Notation) 是数据交换、配置管理和 API 开发的核心。

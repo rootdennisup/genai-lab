@@ -1,7 +1,15 @@
 # 数据建模与结构 (Data Structuring)--Pydantic 详解
 
-- 在 Python 的现代工程化开发中，Pydantic 是目前使用最广泛的数据验证和设置管理库。
-- 它通过 Python 的类型提示 (Type Hints) 驱动，将繁琐的数据校验转化为自动化的工程流程，是构建生产级、高性能应用（如 FastAPI）的核心基石。
+- [数据建模与结构 (Data Structuring)--Pydantic 详解](#数据建模与结构-data-structuring--pydantic-详解)
+  - [1 核心定义与设计哲学](#1-核心定义与设计哲学)
+  - [2 五大核心组件](#2-五大核心组件)
+  - [3 主要功能与工程价值](#3-主要功能与工程价值)
+  - [4 Pydantic 与 FastAPI 的深度集成](#4-pydantic-与-fastapi-的深度集成)
+  - [5 选型建议：Pydantic vs. 标准库数据类](#5-选型建议pydantic-vs-标准库数据类)
+  - [6 应用场景](#6-应用场景)
+  - [7 Pydantic V2 性能优化](#7-pydantic-v2-性能优化)
+    - [7.1 Pydantic V2 序列化性能优化](#71-pydantic-v2-序列化性能优化)
+    - [7.2 数据转换表](#72-数据转换表)
 
 ## 1 核心定义与设计哲学
 - **定义**：Pydantic 是一个利用 Python 类型注解来进行数据验证和序列化处理的库。它的名字源于 “Py” 和 “pedantic”（细致/挑剔）的结合，体现了其对数据校验的严谨态度。
