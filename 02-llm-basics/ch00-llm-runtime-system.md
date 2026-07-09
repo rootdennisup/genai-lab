@@ -1,18 +1,36 @@
-# LLM 应用调用基础
+# LLM 基础技能体系
 
 目标：快速补齐大模型应用开发所需的 Python 工程能力，能够开发脚本、API 服务和简单 AI 工具。
 
+1.LLM 基础机制：Token、上下文、参数
+2.OpenAI / Qwen / DeepSeek API 调用
+3.Prompt Engineering
+4.结构化输出 JSON Schema
+5.Function Call / Tool Calling
+6.多轮对话与上下文管理
+7.记忆
+8.错误处理、重试、限流、成本统计
 
-      System_Prompt
-      User_Prompt
-      Few_Shot
-      Chain_of_Thought使用边界
-      Prompt模板化
-      Prompt版本管理
+
+      
+ 现在开始学习 结构化输出，主要包含以下内容：
+1.JSON输出
+2.Schema约束
+3.Pydantic解析
+4.输出校验
+5.失败重试
+要求：
+1.如果你觉得这个模块还有其他必要的知识可以补充，如果有不明确的地方可以提出质疑
+2.按我接下来的指令一个一个的拆解学习
+3.教我用 notebooLM 提示词，比如 学习 JSON输出，在会话中提示词应该怎么写     
+      
+      
+      
+      
 
 
 
-现在开始学习 1.Prompt工程，主要包含以下内容：
+现在开始学习 1.LLM 基础认知，主要包含以下内容：
 1.Token
 2.上下文窗口
 3.Temperature
@@ -26,30 +44,7 @@
 
 ## LLM 基础技能体系
 
-- 模块1：工程基础(Engineering Foundation) | 6h 
-  - [环境管理*](./ch11-EF-environment-manage.md)
-  - [配置分离*](./ch12-EF-config-separation.md)
-  - [工程规范](./ch13-EF-engineering-specification.md)
-  - [Python 执行引擎](./ch14-EF-execution-engine.md)
-- 模块2：逻辑核心 (Logical Core)  | 8h
-  - [基础语法](./ch21-LC-basic-grammar.md)
-  - [函数与高级特性*](./ch22-LC-function&feature.md)
-  - [迭代与生成*](./ch23-LC-iterator&generator.md)
-  - [命名空间与异常处理](./ch24-LC-namespace&exception.md)
-- 模块3：数据建模与结构 (Data Structuring) | 6h
-  - [核心容器应用](./ch31-DS-data-structure.md)
-  - [面向对象与类型提示*](./ch32-DS-oop-type-hints.md)
-  - [Pydantic 详解*](./ch33-DS-pydantic.md)
-- 模块4：IO 与文件处理 (File Processing) | 4h
-  - [系统与标准库](./ch41-FP-standard-lib.md)
-  - [文件与路径操作*](./ch42-FP-path-ops.md)
-  - [文件与数据处理*](./ch43-FP-data-parsing.md)
-- 模块5：并发与 Web 服务 (Web & Service) | 8h
-  - [Web API 开发*](./ch51-ws-web-api.md)
-  - [FastAPI 框架*](./ch52-ws-fastapi.md)
-  - [Web 应用*](./ch53-ws-web-applicatiion.md)
-  - [pytest 自动化测试框架](./ch54-ws-pytest.md)
-- 实战项目：AI Excel Assistant v1 | 4h
+
 
 ## 实战项目：
 

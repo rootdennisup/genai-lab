@@ -15,5 +15,5 @@ app.include_router(chat_router)
 
 @app.get("/health")
 async def health_check() -> dict[str, str]:
-     """健康检查接口，用于确认服务是否正常启动。"""
+    """健康检查接口，用于确认服务是否正常启动。"""
     return {"status": "ok"}
