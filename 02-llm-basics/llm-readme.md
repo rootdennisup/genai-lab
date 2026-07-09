@@ -99,3 +99,4 @@
 - [OpenAI Prompting](https://developers.openai.com/api/docs/guides/prompt-guidance)
 - [Prompt Engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
 - [GPT-5 Prompting Guide](https://developers.openai.com/cookbook/examples/gpt-5/gpt-5_prompting_guide)
+- [mem0](https://github.com/mem0ai/mem0)
