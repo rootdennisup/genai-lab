@@ -23,13 +23,13 @@
   - [文件与路径操作*](./ch42-FP-path-ops.md)
   - [文件与数据处理*](./ch43-FP-data-parsing.md)
 - 模块5：并发与 Web 服务 (Web & Service) | 8h
-  - [Web API 开发*](./ch51-ws-web-api.md)
-  - [FastAPI 框架*](./ch52-ws-fastapi.md)
-  - [Web 应用*](./ch53-ws-web-applicatiion.md)
-  - [pytest 自动化测试框架](./ch54-ws-pytest.md)
-- 实战项目：AI Excel Assistant v1 | 4h
+  - [Web API 开发*](./ch51-WS-web-api.md)
+  - [FastAPI 框架*](./ch52-WS-fastapi.md)
+  - [Web 应用*](./ch53-WS-web-applicatiion.md)
+  - [pytest 自动化测试框架](./ch54-WS-pytest.md)
 
-## 实战项目：AI Excel Assistant v1
+
+## 实战项目：AI Excel Assistant v1 | 4h
 - 目标：先不接入大模型，做一个普通 Excel 批处理工具。
 
 - 功能清单：
