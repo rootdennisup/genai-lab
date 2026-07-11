@@ -1,4 +1,14 @@
 # JSON Schema 约束* 
+- [JSON Schema 约束\*](#json-schema-约束)
+  - [1 JSON 模式](#1-json-模式)
+  - [2 Schema 约束：定义数据的“形状”](#2-schema-约束定义数据的形状)
+  - [3 输出合同(Output Contracts)](#3-输出合同output-contracts)
+    - [3.1 核心定义与设计理念](#31-核心定义与设计理念)
+    - [3.2 输出合同的四大支柱](#32-输出合同的四大支柱)
+    - [3.3 技术实现手段](#33-技术实现手段)
+    - [3.4 引入输出合同的工程收益](#34-引入输出合同的工程收益)
+  - [4 提示词技巧：确保“纯净”输出](#4-提示词技巧确保纯净输出)
+  - [5 输出校验 \& 验证循环](#5-输出校验--验证循环)
 
 
 ## 1 JSON 模式
@@ -17,6 +27,37 @@
   - **提取完备性**：在处理长文档（如 PDF）提取时，应显式要求模型保持“提取完备性”，防止其在生成过程中由于 Token 限制而中途“偷懒”。
 
 - **工具调用**(Tool Calling)：这是获取结构化数据最可靠的机制。开发者在 tools 字段中定义函数的参数契约，模型负责提取并填充这些参数。
+
+- 案例：让模型从用户对话中提取查询数据库所需的 SQL 参数。
+    ```python
+    # 定义工具函数的参数契约（JSON Schema 格式）
+    product_search_schema = {
+        "type": "object",
+        "properties": {
+            "sql_query": {
+                "type": "string",
+                "description": "用于在产品表中搜索的 SQL 查询语句。例如：'SELECT * FROM products WHERE price < 2.00'"
+            },
+            "limit": {
+                "type": "integer",
+                "description": "返回结果的最大条数"
+            }
+        },
+        "required": ["sql_query"]  # 强制模型必须生成查询语句
+    }
+
+    # 将 Schema 封装进 OpenAI 的 tools 参数中
+    tools = [
+        {
+            "type": "function",
+            "function": {
+                "name": "find_product",
+                "description": "根据 SQL 查询从数据库获取产品列表",
+                "parameters": product_search_schema
+            }
+        }
+    ]
+    ```
 
 
 ## 3 输出合同(Output Contracts) 

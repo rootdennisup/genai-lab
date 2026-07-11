@@ -1,6 +1,35 @@
 # 模块2：API 工程化与结构化交互 (API Engineering & Structured Interfacing)--接口规范与消息流控制*
 本模块解决如何高效、稳定地调通模型，并确保模型返回“程序可解析”的确定性数据。
 
+- [模块2：API 工程化与结构化交互 (API Engineering \& Structured Interfacing)--接口规范与消息流控制\*](#模块2api-工程化与结构化交互-api-engineering--structured-interfacing--接口规范与消息流控制)
+  - [1 大模型 API 配置](#1-大模型-api-配置)
+  - [2 Chat Completions 与模型快照](#2-chat-completions-与模型快照)
+    - [2.1 Chat Completions（聊天补全）](#21-chat-completions聊天补全)
+    - [2.2 模型快照（Model Snapshots）](#22-模型快照model-snapshots)
+  - [3 Messages（消息列表）结构](#3-messages消息列表结构)
+    - [3.1 基本结构](#31-基本结构)
+    - [3.2 核心角色](#32-核心角色)
+    - [3.3 developer vs. system](#33-developer-vs-system)
+  - [4 Streaming（流式输出）](#4-streaming流式输出)
+    - [4.1 Streaming 是如何工作的](#41-streaming-是如何工作的)
+    - [4.2 代码中开启流式输出](#42-代码中开启流式输出)
+    - [4.3 对提升“首个可见字符时间”的实际意义](#43-对提升首个可见字符时间的实际意义)
+  - [5 Timeout（超时）](#5-timeout超时)
+    - [5.1 什么是 Timeout（超时）](#51-什么是-timeout超时)
+    - [5.2 调用LLM 出现超时的原因](#52-调用llm-出现超时的原因)
+    - [5.3 超时处理工程实践](#53-超时处理工程实践)
+    - [5.4 超时后的恢复策略](#54-超时后的恢复策略)
+  - [6 Retry（重试）](#6-retry重试)
+    - [6.1 重试对生产环境的重要性](#61-重试对生产环境的重要性)
+    - [6.2 应该针对哪些类型的错误进行重试](#62-应该针对哪些类型的错误进行重试)
+    - [6.3 如何实现重试机制](#63-如何实现重试机制)
+  - [7 Rate Limit（限流）](#7-rate-limit限流)
+    - [7.1 Rate Limits 的概念与触发因素](#71-rate-limits-的概念与触发因素)
+    - [7.2 使用 tiktoken 预防限流错误](#72-使用-tiktoken-预防限流错误)
+    - [7.3 高并发优化建议](#73-高并发优化建议)
+
+
+[API 调用demo](../codes/ai-buddy/app/llm_runtime/client.py)
 
 ## 1 大模型 API 配置
 我选了 [阿里云百炼](https://help.aliyun.com/zh/model-studio/what-is-model-studio)。以下是按学习使用推荐指数排序的大模型平台：
@@ -198,6 +227,7 @@ LLM 的生成过程具有明显的延迟特征：
 - **验证循环**（Verification loop）：在执行**高风险动作**（如扣费、修改数据库）之前，增加一个轻量级的**检查步骤**。如果检查失败，则重试生成。
 - **持久化中间状态**：对于智能体任务，重试时应传递 previous_response_id，以便模型从之前的推理轨迹中恢复，而不是从头开始，从而节省成本。
 
+[retry demo](../codes/ai-buddy/app/llm_runtime/retry.py)
 
 ## 7 Rate Limit（限流）
 

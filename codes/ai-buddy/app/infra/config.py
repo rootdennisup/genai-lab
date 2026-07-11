@@ -1,18 +1,15 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from typing import Literal
+
 
 class Settings(BaseSettings):
     app_name: str = "ai-buddy"
-    llm_mode: str = "mock"
-
-    model_api_key: str = ""
-    model_base_url: str = ""
-    model_name: str = ""
-    model_timeout: int = 30
+    llm_mode: Literal["mock", "qwen"] = "mock"
 
     model_config = SettingsConfigDict(
         env_file=".env",
         env_prefix="AI_BUDDY_",
-        extra="ignore"
+        extra="ignore",
     )
 
 
@@ -28,8 +25,14 @@ class QwenSettings(BaseSettings):
         extra="ignore",
     )
 
+    @property
+    def chat_completions_url(self) -> str:
+        base_url = self.base_url.rstrip("/")
+        if base_url.endswith("/chat/completions"):
+            return base_url
+        return f"{base_url}/chat/completions"
 
-# 分成两个配置类，是为了让项目配置和模型厂商配置隔离。
-# Settings 管理应用自身配置，QwenSettings 管理百炼 Qwen 相关配置。
+
+# Keep app settings separate from model-provider settings.
 settings = Settings()
 qwen_settings = QwenSettings()
