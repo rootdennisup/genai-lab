@@ -1,5 +1,5 @@
-# JSON Schema 约束* 
-- [JSON Schema 约束\*](#json-schema-约束)
+# API 工程化与结构化交互 (API Engineering & Structured Interfacing)--JSON Schema 约束*
+- [API 工程化与结构化交互 (API Engineering \& Structured Interfacing)--JSON Schema 约束\*](#api-工程化与结构化交互-api-engineering--structured-interfacing--json-schema-约束)
   - [1 JSON 模式](#1-json-模式)
   - [2 Schema 约束：定义数据的“形状”](#2-schema-约束定义数据的形状)
   - [3 输出合同(Output Contracts)](#3-输出合同output-contracts)
@@ -8,7 +8,7 @@
     - [3.3 技术实现手段](#33-技术实现手段)
     - [3.4 引入输出合同的工程收益](#34-引入输出合同的工程收益)
   - [4 提示词技巧：确保“纯净”输出](#4-提示词技巧确保纯净输出)
-  - [5 验证循环 (Verification Loops)](#5-验证循环-verification-loops)
+  - [5 验证循环(Verification Loops)](#5-验证循环verification-loops)
 
 
 ## 1 JSON 模式
@@ -103,7 +103,7 @@
 - **结果导向设计**：定义“什么是好的输出”，让模型自主规划填充 JSON 字段的推理路径，而非手把手教它提取步骤。
 
 
-## 5 验证循环 (Verification Loops)
+## 5 验证循环(Verification Loops)
 验证循环是结果导向设计中确保准确性的最强工程手段，尤其适用于高风险任务。
 
 - **1> 为什么要进行验证循环**？
