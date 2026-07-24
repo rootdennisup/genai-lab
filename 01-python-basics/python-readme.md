@@ -2,7 +2,7 @@
 - **学习目标**：快速补齐大模型应用开发所需的 Python 工程能力，能够开发脚本、API 服务和简单 AI 工具。
 - **学习思路**：以“生产力优先” ，采用了“工程基础 → 逻辑核心 → 数据建模 → IO 处理 → Web 服务”的递进结构。
 
-## Python技能体系
+## 1 Python 知识体系
 
 - 模块1：工程基础(Engineering Foundation) | 6h 
   - [环境管理*](./ch11-EF-environment-manage.md)
@@ -28,33 +28,7 @@
   - [Web 应用*](./ch53-WS-web-applicatiion.md)
   - [pytest 自动化测试框架](./ch54-WS-pytest.md)
 
-
-## 实战项目：AI Excel Assistant v1 | 4h
-- 目标：先不接入大模型，做一个普通 Excel 批处理工具。
-
-- 功能清单：
-  - 上传 Excel
-  - 读取 Sheet
-  - 读取表头
-  - 按字段过滤数据
-  - 批量清洗空值
-  - 生成新列
-  - 导出处理后的 Excel
-  - 提供 FastAPI 接口
-
-## 最小验收标准
-- [☑️] 能读懂 Python 基础代码
-- [☑️] 熟悉 list / dict / JSON
-- [☑️] 能写函数和简单 class
-- [☑️] 能处理文件和路径
-- [☑️] 能写 pydantic 数据模型
-- [☑️] 能写 FastAPI 接口
-- [☑️] 能调用 HTTP API
-- [☑️] 能管理虚拟环境和依赖
-- [☑️] 能看懂常见报错
-- [☑️] 能把代码组织成小项目
-
-## 学习资料
+## 2 学习资料
 
 | 资料                   | 用途                                 |
 | ---------------------- | ------------------------------------ |
@@ -69,3 +43,30 @@
 - [FastAPI 官方文档](https://fastapi.tiangolo.com/zh/)
 - [Pydantic 官方文档](https://pydantic.com.cn/)
 - [Pytest 官方文档](https://pytest.cn/en/stable/)
+
+
+## 3 实战项目：AI Excel Assistant v1 | 4h
+- 目标：先不接入大模型，做一个普通 Excel 批处理工具。
+
+- 功能清单：
+  - 上传 Excel
+  - 读取 Sheet
+  - 读取表头
+  - 按字段过滤数据
+  - 批量清洗空值
+  - 生成新列
+  - 导出处理后的 Excel
+  - 提供 FastAPI 接口
+
+## 4 阶段验收标准
+- [☑️] 能读懂 Python 基础代码
+- [☑️] 熟悉 list / dict / JSON
+- [☑️] 能写函数和简单 class
+- [☑️] 能处理文件和路径
+- [☑️] 能写 pydantic 数据模型
+- [☑️] 能写 FastAPI 接口
+- [☑️] 能调用 HTTP API
+- [☑️] 能管理虚拟环境和依赖
+- [☑️] 能看懂常见报错
+- [☑️] 能把代码组织成小项目
+

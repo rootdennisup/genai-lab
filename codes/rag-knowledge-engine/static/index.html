@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+  <title>RAG Knowledge Engine</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <header><span class="eyebrow">LEARNING LAB · RAG</span><h1>知识，应当有据可循。</h1>
+    <p>上传企业资料，观察 Hybrid Search 如何找到证据，再用可验证引用回答问题。</p></header>
+  <main>
+    <section class="panel">
+      <div class="step">01 / 构建索引</div><h2>上传知识资料</h2>
+      <form id="upload-form">
+        <label>知识库 ID<input name="knowledge_base_id" value="default" required></label>
+        <label class="drop">PDF / DOCX / XLSX / Markdown<input name="file" type="file" required></label>
+        <button>上传并索引</button>
+      </form>
+      <div id="upload-status" class="status"></div><ul id="documents" class="documents"></ul>
+    </section>
+    <section class="panel answer-panel">
+      <div class="step">02 / 检索问答</div><h2>向知识库提问</h2>
+      <form id="query-form">
+        <label>问题<textarea name="question" placeholder="例如：员工年假如何计算？" required></textarea></label>
+        <label class="check"><input name="debug" type="checkbox"> 展示检索调试分数</label>
+        <button>寻找证据</button>
+      </form>
+      <article id="answer" class="answer empty">答案与引用会显示在这里。</article>
+      <details id="debug-wrap" hidden><summary>检索链路</summary><pre id="debug"></pre></details>
+    </section>
+  </main>
+  <footer>本地教学版 · 所有答案均来自已索引 Chunk</footer>
+  <script src="/static/js/app.js" defer></script>
+</body>
+</html>

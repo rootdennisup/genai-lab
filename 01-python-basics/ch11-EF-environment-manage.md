@@ -88,8 +88,8 @@ venv 本质是项目目录下的一个文件夹（通常命名为 .venv），该
 
 
 ### 3.2 在系统中的位置
-- 逻辑位置：项目根目录下的配置文件中，常用文件名 requirements.txt。
-- 物理位置：当执行安装命令后，这些库会被下载并存放在当前 Python 环境（.venv）的 Lib\site-packages 文件夹内。
+- 逻辑位置：项目根目录下的配置文件中，常用文件名 `requirements.txt`。
+- 物理位置：当执行安装命令后，这些库会被下载并存放在当前 Python 环境（.venv）的 `Lib\site-packages` 文件夹内。
 
 ### 3.3 怎么使用（示例）
 - **安装需要的库**，安装 FastAPI 及其标准依赖
@@ -101,7 +101,7 @@ venv 本质是项目目录下的一个文件夹（通常命名为 .venv），该
     pip freeze > requirements.txt
     ```
     项目根目录下会生成 requirements.txt 文件，其中记录了依赖的库和版本号。
-- **分发与还原**：如果你把代码发给同事，他只需拿到代码和这个 requirements.txt 文件，在自己的虚拟环境中运行
+- **分发与还原**：如果你把代码发给同事，他只需拿到代码和这个 `requirements.txt` 文件，在自己的虚拟环境中运行
     ```bash
     pip install -r requirements.txt
     ```
